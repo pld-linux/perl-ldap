@@ -3,11 +3,11 @@
 # _without_tests - do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	perl-ldap perl module
-Summary(pl):	Modu³ perla perl-ldap
+Summary:	perl-ldap Perl module
+Summary(pl):	Modu³ Perla perl-ldap
 Name:		perl-ldap
 Version:	0.2701
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -67,5 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/Net/LDAP/Control
 %{perl_sitelib}/Net/LDAP/Extension
 %{perl_sitelib}/Net/LDAPS.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/N*
 %{_examplesdir}/%{name}-%{version}
