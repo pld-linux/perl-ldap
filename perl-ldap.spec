@@ -59,5 +59,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/LWP/Protocol/ldap.pm
 %{perl_sitelib}/Net/LDAP.pm
 %{perl_sitelib}/Net/LDAP
+%{perl_sitelib}/Net/LDAPS
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
