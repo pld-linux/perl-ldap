@@ -7,7 +7,7 @@ Summary:	perl-ldap module - a client interface to LDAP servers
 Summary(pl):	Modu³ perl-ldap - kliencki interfejs do serwerów LDAP
 Name:		perl-ldap
 Version:	0.31
-Release:	1
+Release:	2
 Epoch:		2
 # same as perl
 License:	GPL v1+ or Artistic
