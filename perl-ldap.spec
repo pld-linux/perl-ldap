@@ -7,7 +7,7 @@ Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
 Version:	0.2701
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -23,7 +23,7 @@ BuildRequires:	perl-XML-Parser
 BuildRequires:	perl(Authen::SASL) >= 2.00
 BuildRequires:	perl-devel
 BuildRequires:	perl-libwww
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +42,8 @@ poziomu programów perla.
 find . -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 %{!?_without_tests:%{__make} test}
 
@@ -60,12 +61,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%{perl_sitelib}/LWP/Protocol/ldap.pm
-%{perl_sitelib}/Net/LDAP.pm
-%dir %{perl_sitelib}/Net/LDAP
-%{perl_sitelib}/Net/LDAP/*.pm
-%{perl_sitelib}/Net/LDAP/Control
-%{perl_sitelib}/Net/LDAP/Extension
-%{perl_sitelib}/Net/LDAPS.pm
+%{perl_vendorlib}/LWP/Protocol/ldap.pm
+%{perl_vendorlib}/Net/LDAP.pm
+%dir %{perl_vendorlib}/Net/LDAP
+%{perl_vendorlib}/Net/LDAP/*.pm
+%{perl_vendorlib}/Net/LDAP/Control
+%{perl_vendorlib}/Net/LDAP/Extension
+%{perl_vendorlib}/Net/LDAPS.pm
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
