@@ -1,25 +1,27 @@
 %include	/usr/lib/rpm/macros.perl
-%define		_noautoreq "perl(Convert::ASN1::Debug)"
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
 Version:	0.25
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Net/%{name}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6.1
-BuildRequires:	perl-Convert-BER
+BuildRequires:	perl-Convert-ASN1 >= 0.07
 BuildRequires:	perl-Digest-MD5
-BuildRequires:	perl-MIME-Base64
-BuildRequires:	perl-URI
 BuildRequires:	perl-IO-Socket-SSL
-BuildRequires:	perl-libwww
+BuildRequires:	perl-MIME-Base64
+BuildRequires:	perl-URI >= 1.08
+BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-devel
+BuildRequires:	perl-libwww
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq "perl(Convert::ASN1::Debug)"
 
 %description
 perl-ldap is a collection of modules that implements a LDAP services
@@ -45,14 +47,12 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 cp -r {contrib,bin} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf ChangeLog README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog README TODO
 %{perl_sitelib}/Authen/SASL.pm
 %{perl_sitelib}/Authen/SASL
 %{perl_sitelib}/LWP/Protocol/ldap.pm
