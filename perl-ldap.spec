@@ -9,7 +9,8 @@ Name:		perl-ldap
 Version:	0.31
 Release:	1
 Epoch:		2
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
 # Source0-md5:	b3107452e2bb4d74d4b9892d61d50137
@@ -59,7 +60,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
 cp -r {contrib,bin} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
