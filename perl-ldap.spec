@@ -3,26 +3,28 @@
 # _without_tests - do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	perl-ldap Perl module
-Summary(pl):	Modu³ perla Perl-ldap
+Summary:	perl-ldap module - a client interface to LDAP servers
+Summary(pl):	Modu³ perl-ldap - kliencki interfejs do serwerów LDAP
 Name:		perl-ldap
-Version:	0.2701
-Release:	3
-Epoch:		1
+Version:	0.30
+Release:	1
+Epoch:		2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
-# Source0-md5:	fd3cd83810bb3163e47dedd34277da76
+# Source0-md5:	be4a71801d5a85db61259fee17486592
+%if %{with tests}
 BuildRequires:	perl-Authen-SASL >= 2.00
 BuildRequires:	perl-Convert-ASN1 >= 0.07
-BuildRequires:	perl-Digest-HMAC
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-IO-Socket-SSL
 BuildRequires:	perl-MIME-Base64
+BuildRequires:	perl-Module-Signature
 BuildRequires:	perl-URI >= 1.08
-BuildRequires:	perl-XML-Parser
-BuildRequires:	perl-devel >= 5.6.1
+BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-libwww
+%endif
+BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,18 +36,21 @@ perl-ldap is a collection of modules that implements a LDAP services
 API for Perl programs.
 
 %description -l pl
-perl-ldap jest kolekcj± modu³ów umo¿liwiaj±cych dostêp do us³ug LDAP z
-poziomu programów perla.
+perl-ldap to zestaw modu³ów umo¿liwiaj±cych dostêp do us³ug LDAP z
+poziomu programów w Perlu.
 
 %prep
 %setup -q -n perl-ldap-%{version}
-find . -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
 
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
+
 %{!?_without_tests:%{__make} test}
+
+# this must be done after tests because of signature checking
+find blib -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -61,13 +66,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README TODO
+%doc CREDITS ChangeLog README RELEASE_NOTES TODO
 %{perl_vendorlib}/LWP/Protocol/ldap.pm
-%{perl_vendorlib}/Net/LDAP.pm
+%{perl_vendorlib}/Net/LDAP*.pm
 %dir %{perl_vendorlib}/Net/LDAP
 %{perl_vendorlib}/Net/LDAP/*.pm
 %{perl_vendorlib}/Net/LDAP/Control
 %{perl_vendorlib}/Net/LDAP/Extension
-%{perl_vendorlib}/Net/LDAPS.pm
 %{_mandir}/man3/N*
 %{_examplesdir}/%{name}-%{version}
