@@ -1,10 +1,10 @@
-%define		_noautoreq "perl(Convert::ASN1::Debug)"
 %include	/usr/lib/rpm/macros.perl
+%define		_noautoreq "perl(Convert::ASN1::Debug)"
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
 Version:	0.25
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
