@@ -3,13 +3,14 @@ Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
 Version:	0.25
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Net/%{name}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6.1
 BuildRequires:	perl-Convert-ASN1 >= 0.07
+BuildRequires:	perl-Digest-HMAC
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-IO-Socket-SSL
 BuildRequires:	perl-MIME-Base64
