@@ -2,14 +2,13 @@
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
-Version:	0.13
-Release:	4
+Version:	0.22
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module//%{name}-%{version}.tar.gz
-Patch0:		%{name}-paths.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/authors/id/G/GB/GBARR//%{name}-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Convert-BER
@@ -31,7 +30,7 @@ poziomu programów perla.
 
 %prep
 %setup -q -n perl-ldap-%{version}
-%patch -p0
+find . -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
 
 %build
 perl Makefile.PL
@@ -43,7 +42,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -r {contrib,bin} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 gzip -9nf ChangeLog README TODO
