@@ -12,6 +12,7 @@ Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
+# Source0-md5:	fd3cd83810bb3163e47dedd34277da76
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	perl-Authen-SASL >= 2.00
 BuildRequires:	perl-Convert-ASN1 >= 0.07
