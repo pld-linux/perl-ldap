@@ -6,7 +6,7 @@
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
-Version:	0.26
+Version:	0.2701
 Release:	1
 Epoch:		1
 License:	GPL
@@ -62,7 +62,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README TODO
 %{perl_sitelib}/LWP/Protocol/ldap.pm
 %{perl_sitelib}/Net/LDAP.pm
-%{perl_sitelib}/Net/LDAP
+%dir %{perl_sitelib}/Net/LDAP
+%{perl_sitelib}/Net/LDAP/*.pm
+%{perl_sitelib}/Net/LDAP/Control
+%{perl_sitelib}/Net/LDAP/Extension
 %{perl_sitelib}/Net/LDAPS.pm
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
