@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests # do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	perl-ldap module - a client interface to LDAP servers
@@ -48,7 +48,7 @@ poziomu programów w Perlu.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 # this must be done after tests because of signature checking
 find blib -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
