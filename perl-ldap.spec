@@ -6,14 +6,14 @@
 Summary:	perl-ldap module - a client interface to LDAP servers
 Summary(pl):	Modu³ perl-ldap - kliencki interfejs do serwerów LDAP
 Name:		perl-ldap
-Version:	0.31
-Release:	2
+Version:	0.32
+Release:	1
 Epoch:		2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
-# Source0-md5:	b3107452e2bb4d74d4b9892d61d50137
+# Source0-md5:	e975df97d371933537ece153113ea686
 URL:		http://ldap.perl.org/
 %if %{with tests}
 BuildRequires:	perl-Authen-SASL >= 2.00
@@ -26,6 +26,7 @@ BuildRequires:	perl-URI >= 1.08
 BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-libwww
 %endif
+BuildRequires:	perl-ExtUtils-AutoInstall
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -67,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS ChangeLog README RELEASE_NOTES TODO
+%doc CREDITS Changes README TODO
 %{perl_vendorlib}/LWP/Protocol/ldap.pm
 %{perl_vendorlib}/Net/LDAP*.pm
 %dir %{perl_vendorlib}/Net/LDAP
