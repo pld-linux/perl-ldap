@@ -1,0 +1,24 @@
+--- contrib.path/isMember.pl	Mon Aug 16 01:11:13 1999
++++ contrib/isMember.pl	Sat Oct 30 21:20:11 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ #isMember.pl 
+ #pass the common name of a group entry (assuming groupOfUniqueNames objectclass) and 
+--- contrib.path/printMembers.pl	Mon Aug  9 01:41:32 1999
++++ contrib/printMembers.pl	Sat Oct 30 21:20:25 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ #printMembers.pl 
+ #given the name of a group (assume object class is groupOfUniqueNames) will
+--- examples.path/example.pl	Sun Jun 27 16:32:15 1999
++++ examples/example.pl	Sat Oct 30 21:45:38 1999
+@@ -1,4 +1,4 @@
+-#!/usr/bin/nperl
++#!/usr/bin/perl
+ 
+ # This is a very simple example, hopefully I will get more soon.
+ # For more complex examples see the scripts in the bin directory
