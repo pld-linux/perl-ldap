@@ -16,7 +16,9 @@ BuildRequires:	perl-Convert-BER
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-URI
+BuildRequires:	perl-IO-Socket-SSL
 BuildRequires:	perl-libwww
+BuildRequires:	perl-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
