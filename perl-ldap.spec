@@ -1,3 +1,4 @@
+%define		_noautoreq "perl(Convert::ASN1::Debug)"
 %include	/usr/lib/rpm/macros.perl
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
