@@ -16,8 +16,6 @@ BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-URI
 BuildRequires:	perl-libwww
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
