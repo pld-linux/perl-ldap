@@ -1,0 +1,2 @@
+- BuildRequires: perl-devel
+- BuildRequires: perl-IO-Socket-SSL
