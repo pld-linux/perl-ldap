@@ -13,6 +13,7 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6.1
+BuildRequires:	perl-Authen-SASL >= 2.00
 BuildRequires:	perl-Convert-ASN1 >= 0.07
 BuildRequires:	perl-Digest-HMAC
 BuildRequires:	perl-Digest-MD5
@@ -20,7 +21,6 @@ BuildRequires:	perl-IO-Socket-SSL
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-URI >= 1.08
 BuildRequires:	perl-XML-Parser
-BuildRequires:	perl(Authen::SASL) >= 2.00
 BuildRequires:	perl-devel
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov >= 4.1-13
