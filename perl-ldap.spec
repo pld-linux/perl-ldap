@@ -3,7 +3,7 @@
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
-Version:	0.25
+Version:	0.2401
 Release:	1
 Epoch:		1
 License:	GPL
