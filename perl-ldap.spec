@@ -13,6 +13,7 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
 # Source0-md5:	b3107452e2bb4d74d4b9892d61d50137
+URL:		http://ldap.perl.org/
 %if %{with tests}
 BuildRequires:	perl-Authen-SASL >= 2.00
 BuildRequires:	perl-Convert-ASN1 >= 0.07
