@@ -42,7 +42,7 @@ poziomu programów perla.
 find . -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 %{!?_without_tests:%{__make} test}
 
