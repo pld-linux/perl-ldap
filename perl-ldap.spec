@@ -1,9 +1,13 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	perl-ldap perl module
 Summary(pl):	Modu³ perla perl-ldap
 Name:		perl-ldap
-Version:	0.25
-Release:	4
+Version:	0.26
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -16,6 +20,7 @@ BuildRequires:	perl-IO-Socket-SSL
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-URI >= 1.08
 BuildRequires:	perl-XML-Parser
+BuildRequires:	perl(Authen::SASL) >= 2.00
 BuildRequires:	perl-devel
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov >= 3.0.3-16
@@ -39,6 +44,7 @@ find . -type f | xargs -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
 %build
 perl Makefile.PL
 %{__make}
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -54,8 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%{perl_sitelib}/Authen/SASL.pm
-%{perl_sitelib}/Authen/SASL
 %{perl_sitelib}/LWP/Protocol/ldap.pm
 %{perl_sitelib}/Net/LDAP.pm
 %{perl_sitelib}/Net/LDAP
