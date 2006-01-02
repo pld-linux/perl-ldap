@@ -16,9 +16,6 @@ Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
 # Source0-md5:	7002aedb8bcaa7169a8f0a8e22d34b72
 URL:		http://ldap.perl.org/
 %if %{with tests}
-BuildRequires:	perl-Authen-SASL >= 2.00
-BuildRequires:	perl-Convert-ASN1 >= 0.07
-BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-IO-Socket-SSL
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-Module-Signature
@@ -26,6 +23,9 @@ BuildRequires:	perl-URI >= 1.08
 BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-libwww
 %endif
+BuildRequires:  perl-Authen-SASL >= 2.00
+BuildRequires:  perl-Convert-ASN1 >= 0.07
+BuildRequires:  perl-Digest-MD5
 BuildRequires:	perl-ExtUtils-AutoInstall
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
