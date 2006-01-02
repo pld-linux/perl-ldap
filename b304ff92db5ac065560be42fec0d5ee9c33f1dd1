@@ -1,0 +1,2 @@
+- it uses Convert::ASN1 instead of Convert::BER
+- new %doc; NFY!
