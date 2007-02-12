@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	perl-ldap module - a client interface to LDAP servers
-Summary(pl):	Modu≥ perl-ldap - kliencki interfejs do serwerÛw LDAP
+Summary(pl.UTF-8):   Modu≈Ç perl-ldap - kliencki interfejs do serwer√≥w LDAP
 Name:		perl-ldap
 Version:	0.33
 Release:	2
@@ -39,9 +39,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 perl-ldap is a collection of modules that implements a LDAP services
 API for Perl programs.
 
-%description -l pl
-perl-ldap to zestaw modu≥Ûw umoøliwiaj±cych dostÍp do us≥ug LDAP z
-poziomu programÛw w Perlu.
+%description -l pl.UTF-8
+perl-ldap to zestaw modu≈Ç√≥w umo≈ºliwiajƒÖcych dostƒôp do us≈Çug LDAP z
+poziomu program√≥w w Perlu.
 
 %prep
 %setup -q
