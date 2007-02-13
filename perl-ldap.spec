@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	perl-ldap module - a client interface to LDAP servers
-Summary(pl.UTF-8):   Moduł perl-ldap - kliencki interfejs do serwerów LDAP
+Summary(pl.UTF-8):	Moduł perl-ldap - kliencki interfejs do serwerów LDAP
 Name:		perl-ldap
 Version:	0.33
 Release:	2
