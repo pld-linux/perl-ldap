@@ -6,26 +6,26 @@
 Summary:	perl-ldap module - a client interface to LDAP servers
 Summary(pl.UTF-8):	Moduł perl-ldap - kliencki interfejs do serwerów LDAP
 Name:		perl-ldap
-Version:	0.34
-Release:	2
+Version:	0.39
+Release:	1
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
-# Source0-md5:	398689b0a7b1615075a6b5035f6e3e91
+# Source0-md5:	0c31097aa22672a2831a7542250d1b55
 URL:		http://ldap.perl.org/
 BuildRequires:	perl-Authen-SASL >= 2.00
 BuildRequires:	perl-Convert-ASN1 >= 0.07
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-IO-Socket-SSL >= 0.81
+BuildRequires:	perl-MIME-Base64
+BuildRequires:	perl-URI >= 1.1
+BuildRequires:	perl-XML-SAX-Writer
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-Module-Signature
-BuildRequires:	perl-URI >= 1.08
-BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-libwww
 %endif
 Obsoletes:	perl-LDAP
@@ -79,5 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Net/LDAP/*.pm
 %{perl_vendorlib}/Net/LDAP/Control
 %{perl_vendorlib}/Net/LDAP/Extension
+%{perl_vendorlib}/Net/LDAP/Intermediate
 %{_mandir}/man3/N*
 %{_examplesdir}/%{name}-%{version}
