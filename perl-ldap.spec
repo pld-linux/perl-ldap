@@ -16,16 +16,19 @@ Source0:	http://www.cpan.org/modules/by-module/Net/%{name}-%{version}.tar.gz
 # Source0-md5:	4ea517a844bad34b79f05afcfd24cc05
 URL:		http://ldap.perl.org/
 BuildRequires:	perl-Authen-SASL >= 2.00
-BuildRequires:	perl-Convert-ASN1 >= 0.07
+BuildRequires:	perl-Convert-ASN1 >= 0.20
 BuildRequires:	perl-Digest-MD5
-BuildRequires:	perl-IO-Socket-SSL >= 0.81
+BuildRequires:	perl-IO-Socket-INET6
+BuildRequires:	perl-IO-Socket-SSL >= 1.26
 BuildRequires:	perl-JSON
+BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-URI >= 1.1
 BuildRequires:	perl-XML-SAX-Writer
 BuildRequires:	perl-devel >= 1:5.18.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Module-Signature
+BuildRequires:	perl-Test-Simple
 BuildRequires:	perl-libwww
 %endif
 Obsoletes:	perl-LDAP
@@ -61,9 +64,9 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	DESTDIR=$RPM_BUILD_ROOT
 cp -r {contrib,bin} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man3/Bundle::Net::LDAP.3pm
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/{Bundle/Net/LDAP.pm,Net/{,LDAP/}*.pod}
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Net/LDAP/.packlist
-rm -f $RPM_BUILD_ROOT%{_mandir}/man3/Bundle::Net::LDAP.3pm
-rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/{Bundle/Net/LDAP.pm,Net/{,LDAP/}*.pod}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
