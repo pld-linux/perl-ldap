@@ -1,0 +1,10 @@
+--- perl-ldap-0.56/lib/Net/LDAP/Entry.pm.orig	2013-06-07 17:02:17.000000000 +0200
++++ perl-ldap-0.56/lib/Net/LDAP/Entry.pm	2013-07-05 22:18:14.395598116 +0200
+@@ -312,6 +312,7 @@
+ # Just for debugging
+ 
+ sub dump {
++  no warnings qw(utf8); # attributes may contain binary (non-unicode) data
+   my $self = shift;
+   no strict 'refs'; # select may return a GLOB name
+   my $fh = @_ ? shift : select;
