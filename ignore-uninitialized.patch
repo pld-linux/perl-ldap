@@ -1,0 +1,22 @@
+--- perl-ldap-0.56/lib/Net/LDAP/Util.pm~	2013-07-05 22:24:24.000000000 +0200
++++ perl-ldap-0.56/lib/Net/LDAP/Util.pm	2013-08-24 23:00:24.178648364 +0200
+@@ -755,7 +755,9 @@
+ 
+     # Time::Local's timegm() interpret years strangely
+     if ($year >= 1000) {
+-      $dec = "0.$dec";
++      if (defined($dec)) {
++        $dec = "0.$dec";
++      }
+ 
+       # decimals in case of missing minutes / seconds - see RFC 4517
+       if (!defined($min)) {
+@@ -793,7 +793,7 @@
+           }
+ 
+           # make decimal part directional
+-          if ($dec != 0) {
++          if (defined($dec) && $dec != 0) {
+             if ($time < 0) {
+               $dec = 1 - $dec;
+               $time++; 
