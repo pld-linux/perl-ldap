@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires working ldap server and gnupg configured with key retrieval with hkp)
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	perl-ldap module - a client interface to LDAP servers
 Summary(pl.UTF-8):	Moduł perl-ldap - kliencki interfejs do serwerów LDAP
 Name:		perl-ldap
